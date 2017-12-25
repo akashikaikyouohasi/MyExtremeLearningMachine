@@ -11,6 +11,7 @@ namespace MyExtremeLearningMachine
         static void Main(string[] args)
         {
             return;
+            //テストコメント
         }
     }
 }
