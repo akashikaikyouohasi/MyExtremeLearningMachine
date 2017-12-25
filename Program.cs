@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace MyExtremeLearningMachine
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             return;
             //テストコメント
+        }
+
+        public int MyAdd(int a, int b)
+        {
+            return a + b;
         }
     }
 }
