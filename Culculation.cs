@@ -10,11 +10,16 @@ namespace MyExtremeLearningMachine
     {
         public void CulcMatrix_H_inv()
         {
+            //List<List<double>> a = new List<List<double>>;
+
+
             /*
 	        matrix1を逆行列にしてmatrix2に代入する
 	        matrix1の行と列数L　正則行列！
 	        */
 
+
+            /*
             double buf; //一時的なデータを蓄える
             int n = L;  //配列の次数
 
@@ -52,6 +57,7 @@ namespace MyExtremeLearningMachine
                     }
                 }
             }
+            */
 
             /*
             //逆行列を出力
