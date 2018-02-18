@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyExtremeLearningMachine
 {
-    class Culculation
+    public class Culculation
     {
         public void CulcMatrix_H_inv()
         {

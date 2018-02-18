@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyExtremeLearningMachine;
 
-namespace UnitTest_MyExtreamLearningTest
+namespace UnitTest_MyExtremLearningTest
 {
     [TestClass]
     public class MyAddUnitTest1

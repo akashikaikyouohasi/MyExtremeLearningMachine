@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyExtremeLearningMachine.csproj">
-      <Project>{7a999356-32dc-441d-9c76-9823b08309f3}</Project>
+      <Project>{fea0e8f0-33a7-49f9-8894-0cbafc3c9617}</Project>
       <Name>MyExtremeLearningMachine</Name>
     </ProjectReference>
   </ItemGroup>
