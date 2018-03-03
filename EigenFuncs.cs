@@ -26,7 +26,7 @@ namespace MyExtremeLearningMachine
          * dllはexeと同じディレクトリに配置する。
          */
         [DllImport("DllEigen", EntryPoint = "InverseMat", CallingConvention = CallingConvention.Cdecl)]
-        private static extern void InverseMat(int dim, float[] a, float[] ans);
+        private static extern void InverseMat(int dim_row, int dim_column, float[] a, float[] ans);
 
         private void Matrix2Array(float[,] Mat, ref float[] Arr)
         {
@@ -37,13 +37,14 @@ namespace MyExtremeLearningMachine
 
             int count = 0;
             //多次元配列なので、Lengthでは要素数を返す。
-            //要素数の平方根を計算し、行列の次元数を計算している。
-            int dim = (int)Math.Sqrt(Mat.Length);
+            //行と列の次元数を得る。
+            int dim_row = Mat.GetLength(0);
+            int dim_column = Mat.GetLength(1);
 
             //２次元配列の中身を１次元配列に順番に格納
-            for (int c = 0; c < dim; c++)
+            for (int c = 0; c < dim_row; c++)
             {
-                for (int r = 0; r < dim; r++)
+                for (int r = 0; r < dim_column; r++)
                 {
                     Arr[count] = Mat[c, r];
                     count++;
@@ -59,10 +60,13 @@ namespace MyExtremeLearningMachine
              */
 
             int count = 0;
-            int dim = (int)Math.Sqrt(Mat.Length);
-            for (int c = 0; c < dim; c++)
+            //行と列の次元数を得る。
+            int dim_row = Mat.GetLength(0);
+            int dim_column = Mat.GetLength(1);
+
+            for (int c = 0; c < dim_row; c++)
             {
-                for (int r = 0; r < dim; r++)
+                for (int r = 0; r < dim_column; r++)
                 {
                     Mat[c, r] = Arr[count];
                     count++;
@@ -75,19 +79,23 @@ namespace MyExtremeLearningMachine
             /*
              * 逆行列を計算する関数
              * [入力]
-             * ２次元配列に格納された正方行列
+             * ２次元配列に格納された行列 0次元目：行、１次元目：列
              * [出力]
              * 計算した逆行列
              */
             float[] arr = new float[Mat.Length];
-            int dim = (int)Math.Sqrt(Mat.Length);
-            float[,] AnsMat = new float[dim, dim];
+            float[,] AnsMat = new float[Mat.GetLength(0), Mat.GetLength(1)];
 
+            //参照渡しで値を格納してもらう。
             Matrix2Array(Mat, ref arr);
+
             float[] ansArr = new float[Mat.Length];
-            InverseMat(dim, arr, ansArr);
+            InverseMat(Mat.GetLength(0), Mat.GetLength(1), arr, ansArr);
+
             Array2Matrix(ansArr, AnsMat);
 
+            //配列の実体をコピーして渡す。
+            //そのまま返すと参照になる？（ポインタを渡す感じ？）
             return (float[,])AnsMat.Clone();
         }
 
