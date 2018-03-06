@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;   //Dll用
 
 namespace MyExtremeLearningMachine
 {
-    class EigenFuncs
+    public class EigenFuncs
     {
 
         //C++DLLでは、void InverseMat(int dim, float a[], float ans[]) と定義している。
@@ -28,7 +28,7 @@ namespace MyExtremeLearningMachine
         [DllImport("DllEigen", EntryPoint = "InverseMat", CallingConvention = CallingConvention.Cdecl)]
         private static extern void InverseMat(int dim_row, int dim_column, float[] a, float[] ans);
 
-        private void Matrix2Array(float[,] Mat, ref float[] Arr)
+        public void Matrix2Array(float[,] Mat, ref float[] Arr)
         {
             /*
              * 2次元配列を１次元配列に変換する関数

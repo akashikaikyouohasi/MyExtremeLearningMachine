@@ -15,11 +15,13 @@ namespace MyExtremeLearningMachine
          * L：中間層のニューロン数
          * M：出力層のニューロン数
          * 
-         * 入力（N行D列）
-         * 入-中間の結合重み（D行L列）
-         * 中間層(N行L列)
-         * 中-出間の結合重み（L行M列）
-         * 出力層（N行M列）
+         * 入力X（N行D列）
+         * 入-中間の結合重みa（D行L列）
+         * 中間層H(N行L列)
+         * 中-出間の結合重みβ（L行M列）
+         * 出力層O（N行M列）
+         * 
+         * 教師データT（N行M列）
          */
 
         static void Main(string[] args)
