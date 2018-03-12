@@ -105,24 +105,30 @@ namespace MyExtremeLearningMachine
              * 内積を計算する関数
              * [入力]
              * ２次元配列に格納された行列 0次元目：行、１次元目：列
+             * Mat1 と Mat2の内積
              * [出力]
              * 計算した逆行列
+             * 行数：mat1の行数
+             * 列数：mat2の列数
              */
-            //float[] arr = new float[mat.length];
+            float[] arr1 = new float[mat1.Length];
+            float[] arr2 = new float[mat2.Length];
+
             float[,] ansmat = new float[mat1.GetLength(0), mat2.GetLength(1)];
 
             ////参照渡しで値を格納してもらう。
-            //matrix2array(mat, ref arr);
+            Matrix2Array(mat1, ref arr1);
+            Matrix2Array(mat2, ref arr2);
 
-            //float[] ansarr = new float[mat.length];
+            float[] ansarr = new float[2] { 0f, 5f };
+            //float[] ansarr = new float[ansmat.Length] { 0f, 5f };
             //inversemat(mat.getlength(0), mat.getlength(1), arr, ansarr);
 
-            //array2matrix(ansarr, ansmat);
+            Array2Matrix(ansarr, ansmat);
 
-            ////配列の実体をコピーして渡す。
-            ////そのまま返すと参照になる？（ポインタを渡す感じ？）
-            //return (float[,])ansmat.clone();
-            return ansmat;
+            //配列の実体をコピーして渡す。
+            //そのまま返すと参照になる？（ポインタを渡す感じ？）
+            return (float[,])ansmat.Clone();
         }
 
     }
