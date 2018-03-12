@@ -17,6 +17,8 @@ namespace MyExtremeLearningMachine
 	        matrix1を逆行列にしてmatrix2に代入する
 	        */
             
+
+
         }
 
         public void CulcInnerProduct()

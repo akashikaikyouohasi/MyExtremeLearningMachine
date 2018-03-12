@@ -99,5 +99,30 @@ namespace MyExtremeLearningMachine
             return (float[,])AnsMat.Clone();
         }
 
+        public float[,] CulcInnerProduct(float[,] Mat1, float[,] Mat2)
+        {
+            /*
+             * 内積を計算する関数
+             * [入力]
+             * ２次元配列に格納された行列 0次元目：行、１次元目：列
+             * [出力]
+             * 計算した逆行列
+             */
+            //float[] arr = new float[mat.length];
+            //float[,] ansmat = new float[mat.getlength(0), mat.getlength(1)];
+
+            ////参照渡しで値を格納してもらう。
+            //matrix2array(mat, ref arr);
+
+            //float[] ansarr = new float[mat.length];
+            //inversemat(mat.getlength(0), mat.getlength(1), arr, ansarr);
+
+            //array2matrix(ansarr, ansmat);
+
+            ////配列の実体をコピーして渡す。
+            ////そのまま返すと参照になる？（ポインタを渡す感じ？）
+            //return (float[,])ansmat.clone();
+        }
+
     }
 }
