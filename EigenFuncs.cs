@@ -25,8 +25,18 @@ namespace MyExtremeLearningMachine
          * 
          * dllはexeと同じディレクトリに配置する。
          */
+
+        /*
+         * 別プロジェクトにて生成したDLLから読み込む関数。
+         * Eigenライブラリを用いて実装している。
+         */
+        //逆行列を計算するメソッド
         [DllImport("DllEigen", EntryPoint = "InverseMat", CallingConvention = CallingConvention.Cdecl)]
         private static extern void InverseMat(int dim_row, int dim_column, float[] a, float[] ans);
+        //内積を計算するメソッド
+        [DllImport("DllEigen", EntryPoint = "InnerProductMat", CallingConvention = CallingConvention.Cdecl)]
+        private static extern void InnerProductMat(int dim_row1, int dim_column1, float[] mat1, int dim_row2, int dim_column2, float[] mat2, float[] ans);
+
 
         public void Matrix2Array(float[,] Mat, ref float[] Arr)
         {
