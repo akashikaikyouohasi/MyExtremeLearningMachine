@@ -131,8 +131,7 @@ namespace MyExtremeLearningMachine
             Matrix2Array(mat2, ref arr2);
 
             float[] ansarr = new float[ansmat.Length];
-            //InnerProductMat(mat1.GetLength(0), mat1.GetLength(1), arr1, mat2.GetLength(0), mat2.GetLength(1), arr2, ansarr);
-            InnerProductMat(2, 2, arr1, 2, 1, arr2, ansarr);
+            InnerProductMat(mat1.GetLength(0), mat1.GetLength(1), arr1, mat2.GetLength(0), mat2.GetLength(1), arr2, ansarr);
 
             Array2Matrix(ansarr, ansmat);
 

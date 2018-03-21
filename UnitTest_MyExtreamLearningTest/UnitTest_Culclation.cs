@@ -27,7 +27,11 @@ namespace UnitTest_MyExtremLearningTest
             var frm = new EigenFuncs();
 
             //テストパターン１
-            float[,] mat1 = new float[2, 2] { { 2f, -3f }, { -1f, 4f } };
+            /*以下の内積を行う
+             * | 2  -1| | 1|
+             * |-3   4| | 2|
+             */
+            float[,] mat1 = new float[2, 2] { { 2f, -1f }, { -3f, 4f } };//初期化は、{ {0行目の内容}, {１行目の内容} }　　となっていることに注意　
             float[,] mat2 = new float[2, 1] { { 1f }, { 2f } };
             float[,] result = new float[2,1];
             float[,] answer = new float[2,1] { { 0f }, { 5f } };
@@ -36,8 +40,13 @@ namespace UnitTest_MyExtremLearningTest
             CollectionAssert.AreEqual(answer, result);
 
             //テストパターン２
+            /*以下の内積を行う
+             *         | 8 4  2|
+             * |1 5 9| | 1 3 -6|
+             *         |-7 0  5| 
+             */
             mat1 = new float[1, 3] { { 1f, 5f, 9f }};
-            mat2 = new float[3, 3] { { 8f, 1f, -7f }, { 4f, 3f, 0f } , { 2f, -6f, 5f } };
+            mat2 = new float[3, 3] { { 8f, 4f, 2f }, { 1f, 3f, -6f } , { -7f, 0f, 5f } };
             result = new float[1, 3];
             answer = new float[1, 3] { { -50f, 19f, 17f } };
 
