@@ -87,6 +87,19 @@ namespace MyExtremeLearningMachine
             }
 
 
+            //内積の計算
+            AnsMat = eigen.CulcInnerProduct(bufMat, bufMat);
+            //result
+            Console.WriteLine("====RESULT====");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write("{0}, ", AnsMat[i, j]);
+                }
+                Console.Write("\n");
+            }
+
             Console.ReadLine();
         }
     }
